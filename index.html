@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <title>GPGMATHS-CE-ATANDANCE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="#"><span class="brand-mark">∑</span><span>GPGMATHS<span class="brand-muted">-CE-ATANDANCE</span></span></a><span class="secure"><i></i> Attendance portal</span></header>
+
+    <section class="welcome" id="welcome">
+      <div class="intro"><p class="eyebrow">TEACHER ATTENDANCE PORTAL</p><h1>Maths class,<br><em>all in one place.</em></h1><p class="lead">Only the teacher signs in and marks student attendance by roll number.</p><div class="math-art" aria-hidden="true"><span>∫</span><span>π</span><span>√x</span><span>∑</span><b>f(x) = ?</b></div></div>
+      <div class="card login-card"><div class="card-icon">✳</div><p class="eyebrow">STUDENT ATTENDANCE</p><h2>Check your attendance</h2><p class="muted">Enter your roll number to see your percentage.</p>
+        <form id="student-check-form"><label for="check-roll">Your roll number</label><input id="check-roll" type="text" placeholder="For example: 058" required><button class="primary" type="submit">Check attendance <span>→</span></button></form><div class="result hidden" id="student-result"></div>
+        <details class="teacher-login"><summary>Teacher sign in</summary><form id="login-form"><label for="email">Authorised teacher email</label><input id="email" type="email" placeholder="teacher@email.com" autocomplete="email" required><label for="password">Password</label><input id="password" type="password" placeholder="Enter password" autocomplete="current-password" required><label for="name">Teacher full name</label><input id="name" type="text" placeholder="Your full name" autocomplete="name" required minlength="2"><button class="primary" type="submit">Open register <span>→</span></button></form></details>
+      </div>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard">
+      <div class="dash-head"><div><p class="eyebrow">MATHS CLASS</p><h1>Good to see you, <span id="user-name"></span>.</h1><p class="muted">Your class attendance, in one place.</p></div><button class="text-button" id="signout">Sign out ↗</button></div>
+      <div class="stats"><div class="stat"><span class="stat-label">TODAY</span><strong id="today-date">—</strong><small>Class date</small></div><div class="stat"><span class="stat-label">PRESENT TODAY</span><strong id="present-count">0</strong><small>Marked by teacher</small></div><div class="stat"><span class="stat-label">ABSENT TODAY</span><strong id="absent-count">228</strong><small>Not marked present</small></div></div>
+      <div class="panel"><div class="panel-head"><div><p class="eyebrow">CLASS REGISTER</p><h2>Attendance</h2></div><div class="date-wrap"><label for="class-date">Class date</label><input id="class-date" type="date"></div></div>
+        <div class="teacher-tools" id="teacher-tools"><div class="teacher-title"><div><strong>Teacher register</strong><p class="muted">Enter 058 or CE058 to mark that student present. All other students are absent.</p></div><span class="teacher-tag">228 STUDENTS</span></div><form id="student-form" class="student-form"><input id="student-roll" type="text" placeholder="Roll number, e.g. 058" required><button class="primary small">✓ Mark present</button></form></div>
+        <div class="table-wrap"><table><thead><tr><th>ROLL NO.</th><th>STUDENT</th><th>STATUS</th></tr></thead><tbody id="attendance-list"></tbody></table><div id="empty" class="empty">Enter class strength and mark present students.</div></div>
+      </div>
+      <p class="local-note">All roll numbers from 1 to the class strength are counted. Any roll number not marked present is automatically absent. This demo saves data in this browser only.</p>
+    </section>
+    <footer><span>GPGMATHS-CE-ATANDANCE</span><span>Made for your classroom <b>✳</b></span></footer>
+  </main><script src="roster.js"></script><script src="app.js"></script>
+</body></html>
